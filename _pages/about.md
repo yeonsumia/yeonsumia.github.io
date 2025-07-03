@@ -10,7 +10,7 @@ redirect_from:
 Greetings! 👋🏼 I am an undergraduate student at the Seoul National University in Computer Science and Engineering. I explore the world through the lens of artificial intelligence.
 
 ## News
-- 2025.06. Excited to release <strong>[LOKI](https://github.com/yeonsumia/loki)</strong>! I worked closely with Ainaz Eftekhar under the supervision of Prof. Ali Farhadi and Prof. Ranjay Krishna during my exchange at the University of Washington. I spent the summer of 2024 in Seattle.
+- 2025.06. Excited to release <strong>[LOKI](https://github.com/yeonsumia/loki)</strong>! I worked closely with Ainaz Eftekhar under the supervision of Prof. Ali Farhadi and Prof. Ranjay Krishna during my exchange at the University of Washington. I loved summer in Seattle.
 
 
 ## Publications
