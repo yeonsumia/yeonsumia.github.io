@@ -14,14 +14,17 @@ Greetings! 👋🏼 I am an undergraduate student at the Seoul National Universi
 
 
 ## Publications
+- Tree-guided Diffusion Planner  
+<i style="color: red;">Coming soon</i>  
+
 - Convergent Functions, Divergent Forms  
 <strong><u>Hyeonseong Jeon</u></strong>\*, Ainaz Eftekhar\*, Aaron Walsman, Kuo-Hao Zeng, Ali Farhadi, Ranjay Krishna  
-<i>preprint</i>  
+<i style="color: red;">preprint</i>   
 [[project page](https://loki-codesign.github.io)]&nbsp;[[arXiv](https://arxiv.org/abs/2505.21665)]&nbsp;[[code](https://github.com/yeonsumia/loki)]
 
 - Learning to Continually Learn with the Bayesian Principle  
 Soochan Lee, <strong><u>Hyeonseong Jeon</u></strong>, Jaehyeon Son, Gunhee Kim  
-<i>ICML 2024</i>  
+<i style="color: red;">ICML 2024</i>  
 [[arXiv](https://arxiv.org/abs/2405.18758)]&nbsp;[[code](https://github.com/soochan-lee/SB-MCL)]
 
 
