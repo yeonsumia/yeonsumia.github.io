@@ -1,0 +1,584 @@
+/* Publications Page Styling */
+
+.publications-container {
+  /* Use theme default layout with minimal constraints */
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 1rem 0;
+}
+  
+  /* Tag Filter Section */
+  .tag-filters {
+    margin: 0 0 1rem 0;
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .tag-filters h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.9rem;
+    color: #343a40;
+    font-weight: 600;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+  
+  .filter-btn {
+    padding: 0.3rem 0.7rem;
+    border: 1px solid #007bff;
+    background: white;
+    color: #007bff;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+  }
+  
+  .filter-btn:hover {
+    background: #007bff;
+    color: white;
+    transform: translateY(-1px);
+  }
+  
+  .filter-btn.active {
+    background: #007bff;
+    color: white;
+  }
+  
+  /* Publications Grid */
+  .publications-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* one card per row */
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .publication-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+    width: 100%;
+    display: flex; /* thumbnail left, content right */
+    align-items: center; /* vertically center thumbnail relative to content */
+  }
+  
+  .publication-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+  
+  .card-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 5 / 2; /* prefer wide ratio */
+    overflow: hidden;
+    background: #f8f9fa;
+    background-image: radial-gradient( circle at 30% 30%, rgba(0,0,0,0.04), rgba(0,0,0,0) 45% ), linear-gradient(135deg, rgba(99, 179, 237, 0.08), rgba(99, 179, 237, 0));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-thumbnail img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* scale without cropping */
+    object-position: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .card-thumbnail img.main-img {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .card-thumbnail img.hover-img {
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  .publication-card:hover .card-thumbnail img.main-img {
+    opacity: 0;
+  }
+  
+  .publication-card:hover .card-thumbnail img.hover-img {
+    opacity: 1;
+  }
+
+  .thumb-badge {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(2px);
+    line-height: 1;
+  }
+  
+  .publication-card:hover .card-thumbnail img {
+    transform: none; /* disable zoom to prevent any visual cropping */
+  }
+  
+  .card-content {
+    position: relative; /* needed for positioning */
+    padding: 1rem;
+    flex: 1;
+  }
+  
+  .card-content::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1rem;                /* offset down */
+    bottom: 1rem;             /* offset up */
+    width: 1px;
+    background-color: #e9ecef;
+  }
+  
+  .card-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.0rem;
+    line-height: 1.3;
+  }
+  
+  .card-title a {
+    color: #212529;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .card-title a:hover {
+    color: #007bff;
+  }
+  
+  .card-authors {
+    margin: 0 0 0.4rem 0;
+    font-size: 0.75rem !important;
+    color: #6c757d;
+    font-style: italic;
+    line-height: 1.3;
+  }
+  
+  .card-content .card-venue {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.0rem !important;
+    color: #495057;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #2c5aa0;
+  }
+  
+  .card-year {
+    font-weight: 600;
+    color: #007bff;
+    margin-left: 0.5rem;
+  }
+  
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+  }
+  
+  .tag {
+    padding: 0.2rem 0.5rem;
+    background: #e9ecef;
+    color: #495057;
+    border-radius: 10px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    /* text-transform: lowercase; */
+  }
+  
+  /* No results message */
+  .no-results {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #6c757d;
+    font-style: italic;
+  }
+  
+  .no-publications {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #6c757d;
+  }
+  
+  /* Dark mode support */
+  [data-theme="dark"] .tag-filters {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+  
+  [data-theme="dark"] .tag-filters h3 {
+    color: #e2e8f0;
+  }
+  
+  [data-theme="dark"] .filter-btn {
+    background: #2d3748;
+    color: #63b3ed;
+    border-color: #63b3ed;
+  }
+  
+  [data-theme="dark"] .filter-btn:hover,
+  [data-theme="dark"] .filter-btn.active {
+    background: #63b3ed;
+    color: #1a202c;
+  }
+  
+  [data-theme="dark"] .publication-card {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+  
+  [data-theme="dark"] .card-thumbnail {
+    background: #1a202c;
+  }
+  
+  [data-theme="dark"] .card-title a {
+    color: #e2e8f0;
+  }
+  
+  [data-theme="dark"] .card-title a:hover {
+    color: #63b3ed;
+  }
+  
+  [data-theme="dark"] .card-authors {
+    color: #a0aec0;
+  }
+  
+  [data-theme="dark"] .card-venue {
+    color: #cbd5e0;
+  }
+  
+  [data-theme="dark"] .card-year {
+    color: #63b3ed;
+  }
+  
+  [data-theme="dark"] .tag {
+    background: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  [data-theme="dark"] .no-results,
+  [data-theme="dark"] .no-publications {
+    background: #2d3748;
+    color: #a0aec0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .publications-container {
+      padding: 0.5rem;
+    }
+    
+    .publications-grid {
+      grid-template-columns: 1fr; /* remains single column */
+      gap: 1rem;
+    }
+    
+    .tag-filters {
+      padding: 1rem;
+    }
+    
+    .filter-buttons {
+      gap: 0.3rem;
+    }
+    
+    .filter-btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+    }
+    
+    .publication-card {
+      flex-direction: column; /* stack image on top on mobile */
+      align-items: stretch; /* keep full width on mobile */
+    }
+    
+    .card-thumbnail {
+      width: 100%;
+      aspect-ratio: 5 / 2;
+      flex: 0 0 auto;
+      margin-left: 0; /* remove left margin on mobile */
+      border-right: none;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .card-content {
+      padding: 1rem;
+    }
+    
+    .card-title {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card-thumbnail {
+      height: 150px;
+    }
+    
+    .filter-buttons {
+      justify-content: center;
+    }
+  }
+
+/* Left column wrapper for thumbnail + tags */
+.card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 240px; /* adjust to change left column width */
+  flex: 0 0 240px;
+  margin-left: 1rem;
+  /* border-right: 1px solid #e9ecef; */
+  padding-right: 1rem;
+}
+
+/* Make thumbnail fill the left column; keep wide aspect ratio */
+.card-left .card-thumbnail {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-left: 0;
+  border-right: none;
+  aspect-ratio: 5 / 2;
+}
+
+/* Keep image contained and centered (no cropping) */
+.card-left .card-thumbnail img {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Tags placed below the thumbnail on the left */
+.card-tags--left {
+  padding: 0 0.25rem;
+}
+
+/* Optional short description under links on the right */
+.page__content .card-description {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #495057;
+  line-height: 1.5;
+}
+
+/* Hide any legacy thumbnail badge if present */
+.thumb-badge { display: none; }
+
+/* Row wrapper for left and right columns */
+.card-main {
+  display: flex;
+  align-items: center;
+}
+
+/* Center align tags below the thumbnail */
+.card-tags--left {
+  display: flex;
+  justify-content: center;
+}
+
+/* Full-width description under the row */
+.card-description--full {
+  padding: 0 1rem 1rem 1rem;
+}
+
+/* Enforce two-row layout: first row (.card-main), second row (.card-description--full) */
+.publication-card {
+  display: flex;
+  flex-direction: column; /* stack rows */
+  align-items: stretch;   /* full width rows */
+}
+
+.card-main {
+  display: flex;          /* left and right columns */
+  align-items: center;
+}
+
+.card-description--full {
+  margin-top: 0.5rem;
+  padding: 0 1rem 1rem 1rem;
+}
+
+/* Mobile: stack left column above content cleanly */
+@media (max-width: 768px) {
+  .card-left {
+    width: 100%;
+    flex: 0 0 auto;
+    margin-left: 0;
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+    padding-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  .card-left .card-thumbnail {
+    width: 100%;
+    aspect-ratio: 5 / 2;
+  }
+  .card-main {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .card-description--full {
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+/* Icon buttons for project links */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #007bff;
+  background: white;
+  color: #007bff;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.icon-btn:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Dark mode support for icon buttons */
+[data-theme="dark"] .icon-btn {
+  background: #2d3748;
+  color: #63b3ed;
+  border-color: #63b3ed;
+}
+
+[data-theme="dark"] .icon-btn:hover {
+  background: #63b3ed;
+  color: #1a202c;
+}
+
+/* News toggle styling */
+details {
+  margin: 0.5rem 0 0 1.5rem;
+  border-left: 2px solid #e9ecef;
+  padding-left: 1rem;
+}
+
+details summary {
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 0.85rem;
+  font-style: normal;
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+  list-style: none;
+  position: relative;
+}
+
+details summary:hover {
+  color: #007bff;
+}
+
+details summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+  color: #007bff;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+details > *:not(summary) {
+  margin: 0.5rem 0 0 0;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #007bff;
+  font-size: 0.6rem !important;
+  line-height: 1.5;
+  color: #495057;
+}
+
+/* Alternative selector to ensure it works */
+.publications-container details > *:not(summary),
+.publications-container + details > *:not(summary) {
+  font-size: 0.6rem !important;
+}
+
+/* Very specific selector for details content */
+details p,
+details div,
+details span {
+  font-size: 0.6rem !important;
+  color: #666 !important;
+}
+
+/* Target any text content in details */
+details:not([open]) > *:not(summary),
+details[open] > *:not(summary) {
+  font-size: 0.6rem !important;
+}
+
+/* Simple approach: target the details element itself */
+details {
+  font-size: 0.85rem;
+}
+
+/* But keep the summary at normal size */
+details summary {
+  font-size: 0.85rem;
+}
+
+/* Dark mode support for news toggle */
+[data-theme="dark"] details {
+  border-left-color: #4a5568;
+}
+
+[data-theme="dark"] details summary {
+  color: #a0aec0;
+}
+
+[data-theme="dark"] details summary:hover {
+  color: #63b3ed;
+}
+
+[data-theme="dark"] details summary::before {
+  color: #63b3ed;
+}
+
+[data-theme="dark"] details > *:not(summary) {
+  background: #2d3748;
+  border-left-color: #63b3ed;
+  color: #e2e8f0;
+}

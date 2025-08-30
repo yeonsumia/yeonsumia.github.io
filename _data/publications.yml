@@ -1,0 +1,45 @@
+- title: Tree-guided Diffusion Planner
+  authors: Hyeonseong Jeon, Cheolhong Min, Jaesik Park
+  venue: preprint
+  year: "2025"
+  status: 
+  thumbnail: images/tdp_2025/overview.png
+  hover_thumbnail: images/tdp_2025/overview_tasks.png
+  url: 
+  links: 
+    project: https://tree-diffusion-planner.github.io
+    arxiv: 
+  tags: [diffusion-planning, zero-shot]
+  description: #"We introduce a training-free zero-shot planning framework that addresses limitations of standard gradient-based guidance in complex scenarios by building trajectory trees through two-phase denoising: diverse exploration via particle guidance followed by task-specific refinement via conditional denoising. This bi-level sampling approach systematically explores diverse trajectory regions while effectively utilizing gradient information across the expanded solution space, offering a robust solution to test-time planning challenges. Extensive evaluation on Maze2D gold-picking, robot arm block manipulation, and AntMaze multi-goal exploration demonstrates superior performance over state-of-the-art planning approaches across diverse guidance functions."
+
+- title: Convergent Functions, Divergent Forms
+  authors: "Hyeonseong Jeon*, Ainaz Eftekhar*, Aaron Walsman, Kuo-Hao Zeng, Ali Farhadi, Ranjay Krishna"
+  venue: preprint
+  year: "2025"
+  status: 
+  thumbnail: images/loki_2025/overview_method.png
+  hover_thumbnail: images/loki_2025/overview.png
+  url: https://loki-codesign.github.io
+  links:
+    project: https://loki-codesign.github.io
+    arxiv: https://arxiv.org/abs/2505.21665
+    code: https://github.com/yeonsumia/loki
+  tags: [co-design, quality-diversity, reinforcement-learning]
+  description: #"We introduce a compute-efficient framework for co-designing morphologies and control policies that learns convergent functions (shared control policies trained across clusters of morphologically similar designs) while promoting divergent forms through Dynamic Local Search (DLS), reducing training cost per design by 78% fewer simulation steps and 40% less compute. This approach enables exploration of 780 times more designs than traditional methods, discovering diverse high-performing morphologies ranging from quadrupeds to crabs, bipedals, and spinners that significantly outperform prior work in both diversity and adaptability. Extensive evaluation demonstrates superior transfer performance to unseen downstream tasks in agility, stability, and manipulation domains, with substantially greater sample efficiency than existing co-design methods."
+
+- title: Learning to Continually Learn with the Bayesian Principle
+  authors: "Soochan Lee, Hyeonseong Jeon, Jaehyeon Son, Gunhee Kim"
+  venue: ICML
+  year: "2024"
+  status: 
+  thumbnail: images/sb-cml_2024/overview.png
+  hover_thumbnail: images/sb-cml_2024/overview_tasks.png
+  url: 
+  links:
+    arxiv: https://arxiv.org/abs/2405.18758
+    code: https://github.com/soochan-lee/SB-MCL
+  tags: [continual-learning, bayesian, meta-learning]
+  description: #"We introduce a general meta-continual learning framework that combines neural networks' strong representational power with simple statistical models' robustness to forgetting, where continual learning occurs only in statistical models via sequential Bayesian updates while neural networks remain fixed and protected from catastrophic forgetting. This domain-agnostic and model-agnostic approach achieves significantly improved performance and excellent scalability by meta-learning neural networks to bridge raw data and statistical models that are completely immune to forgetting. Our framework can be applied to a wide range of problems and easily integrated with existing architectures, demonstrating superior performance across diverse continual learning scenarios."
+
+
+

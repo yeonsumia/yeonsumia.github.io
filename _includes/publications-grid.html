@@ -1,0 +1,148 @@
+<div class="publications-container">
+  {% if include.pubs and include.pubs.size > 0 %}
+    {% comment %}
+    <div class="tag-filters">
+      <h3>Filter by topic:</h3>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-tag="all">All</button>
+        {% assign all_tags = '' | split: '' %}
+        {% for pub in include.pubs %}
+          {% if pub.tags %}
+            {% for tag in pub.tags %}
+              {% unless all_tags contains tag %}
+                {% assign all_tags = all_tags | push: tag %}
+              {% endunless %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+        {% assign sorted_tags = all_tags | sort %}
+        {% for tag in sorted_tags %}
+          <button class="filter-btn" data-tag="{{ tag }}">{% if tag == 'LLMs' %}LLMs{% else %}{{ tag | capitalize }}{% endif %}</button>
+        {% endfor %}
+      </div>
+    </div>
+    {% endcomment %}
+
+    <div class="publications-grid" id="publications-grid">
+      {% for pub in include.pubs %}
+        <div class="publication-card" data-tags="{% if pub.tags %}{{ pub.tags | join: ',' }}{% endif %}">
+          <div class="card-main">
+            <div class="card-left">
+              <div class="card-thumbnail">
+                {% if pub.thumbnail %}
+                  <img class="main-img" src="/{{ pub.thumbnail }}" alt="Thumbnail for {{ pub.title }}" loading="lazy">
+                  <img class="hover-img" src="/{{ pub.hover_thumbnail }}" alt="Hover Thumbnail for {{ pub.title }}" loading="lazy">
+                {% else %}
+                  <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#6c757d;background:#f8f9fa;font-size:0.8rem;">No image</div>
+                {% endif %}
+              </div>
+              {% if pub.tags %}
+                <div class="card-tags card-tags--left">
+                  {% for tag in pub.tags %}
+                    <span class="tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="card-content">
+              <h3 class="card-title">
+                {% if pub.url %}
+                  <!-- <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a> -->
+                  {{ pub.title }}
+                {% else %}
+                  {{ pub.title }}
+                {% endif %}
+              </h3>
+
+              {% if pub.authors %}
+                {% assign authors_text = pub.authors | replace: 'Hyeonseong Jeon', '<strong><u>Hyeonseong Jeon</u></strong>' %}
+                <p class="card-authors">{{ authors_text }}</p>
+              {% endif %}
+
+              <p class="card-venue">
+                {% if pub.venue and pub.venue != 'N/A' %}
+                  {{ pub.venue }}
+                {% endif %}
+                {% if pub.year and pub.year != 'N/A' %}
+                  <span class="card-year">{{ pub.year }}</span>
+                {% endif %}
+                {% if pub.status %}
+                  <span class="card-year">{{ pub.status }}</span>
+                {% endif %}
+              </p>
+
+              {% if pub.links %}
+                <div class="card-links" style="display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.4rem 0 0.2rem 0;">
+                  {% for link in pub.links %}
+                    {% assign key = link[0] %}
+                    {% assign url = link[1] %}
+                    {% if key == 'project' %}
+                      <a class="icon-btn" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="Project Page">
+                        <i class="fas fa-external-link-alt"></i>
+                      </a>
+                    {% elsif key == 'arxiv' %}
+                      <a class="icon-btn" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="arXiv Paper">
+                        <i class="fas fa-file-alt"></i>
+                      </a>
+                    {% elsif key == 'code' %}
+                      <a class="icon-btn" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="Code Repository">
+                        <i class="fab fa-github"></i>
+                      </a>
+                    {% else %}
+                      <a class="icon-btn" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="{{ key | capitalize }}">
+                        <i class="fas fa-link"></i>
+                      </a>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          {% if pub.description %}
+            <p class="card-description card-description--full">{{ pub.description }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div id="no-results" class="no-results" style="display:none;">
+      <p>No publications found for the selected tag.</p>
+    </div>
+  {% else %}
+    <div class="no-publications">
+      <p>No publications found.</p>
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.tag-filters .filter-btn'));
+    var cards = Array.prototype.slice.call(document.querySelectorAll('#publications-grid .publication-card'));
+    var noResults = document.getElementById('no-results');
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var tag = btn.getAttribute('data-tag');
+
+        var anyVisible = false;
+        cards.forEach(function (card) {
+          var tags = (card.getAttribute('data-tags') || '').split(',');
+          var show = (tag === 'all') || tags.indexOf(tag) !== -1;
+          card.style.display = show ? '' : 'none';
+          if (show) { anyVisible = true; }
+        });
+
+        if (noResults) {
+          noResults.style.display = anyVisible ? 'none' : '';
+        }
+      });
+    });
+  });
+</script>
+
+
