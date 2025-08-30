@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Greetings! 👋🏼 I am an undergraduate student at the Seoul National University in Computer Science and Engineering (SNU CSE). I explore the world through the lens of artificial intelligence.
+Greetings! I am an undergraduate student at the Seoul National University in Computer Science and Engineering (SNU CSE). I explore the world through the lens of artificial intelligence.
 
 ## News
 - 2025.08. I was honored to receive SNU CSE Outstanding Undergraudate Thesis Award.
