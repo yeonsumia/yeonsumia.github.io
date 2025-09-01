@@ -15,7 +15,7 @@ Greetings! I am an undergraduate student at the Seoul National University in Com
     <summary>more info</summary>
     	I collaborated with Prof. Jaesik Park during my final semester at Seoul National University.
   </details>
-- 2025.08. Honored to receive SNU CSE Outstanding Undergraudate Thesis Award.
+- 2025.08. Honored to receive SNU CSE Outstanding Undergraduate Thesis Award.
 - 2025.06. Released <strong>[LOKI](https://github.com/yeonsumia/loki)</strong>, a paper on morphology–control co-design.
   <details>
     <summary>more info</summary>
