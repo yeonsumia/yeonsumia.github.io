@@ -31,7 +31,7 @@ Greetings! I am an undergraduate student at the Seoul National University in Com
 
 
 ## Honors & Awards
-- SNU CSE Outstanding Undergraudate Thesis Award (2025.08.)
+- SNU CSE Outstanding Undergraduate Thesis Award (2025.08.)
 - Presidential Science Scholarship (2021.03. -- 2025.02.)  
 - Hanseong Nobel Scholarship (2019.03. -- 2021.02.)
 
