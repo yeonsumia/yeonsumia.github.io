@@ -1,6 +1,6 @@
 - title: Tree-guided Diffusion Planner
   authors: Hyeonseong Jeon, Cheolhong Min, Jaesik Park
-  venue: preprint
+  venue: NeurIPS
   year: "2025"
   status: 
   thumbnail: images/tdp_2025/overview.png
@@ -14,7 +14,7 @@
 
 - title: Convergent Functions, Divergent Forms
   authors: "Hyeonseong Jeon*, Ainaz Eftekhar*, Aaron Walsman, Kuo-Hao Zeng, Ali Farhadi, Ranjay Krishna"
-  venue: preprint
+  venue: NeurIPS
   year: "2025"
   status: 
   thumbnail: images/loki_2025/overview_method.png
