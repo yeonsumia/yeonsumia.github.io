@@ -7,7 +7,13 @@ redirect_from:
   - /about.html
 ---
 
-Greetings! I am an undergraduate student at the Seoul National University in Computer Science and Engineering (SNU CSE). I explore the world through the lens of artificial intelligence.
+Greetings! I am an undergraduate student at the Seoul National University in Computer Science and Engineering (SNU CSE).
+I explore the world through the lens of artificial intelligence.
+I value both problem framing and problem solving.
+With strong computational power and human creativity, I believe we can push the boundaries of our knowledge.
+
+<p><em>I’m preparing to apply for Ph.D. programs in <span style="color: #e74c3c;">Fall 2027</span>.<br>
+I’m also looking for new research opportunities and would be happy to connect with others who share similar interests.</em></p>
 
 ## News
 - 2025.08. Released <strong>[TDP](https://tree-diffusion-planner.github.io)</strong>, a paper on zero-shot test-time diffusion planning.
