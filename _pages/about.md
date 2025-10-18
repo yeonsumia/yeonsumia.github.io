@@ -12,7 +12,7 @@ I explore the world through the lens of artificial intelligence.
 I value both problem framing and problem solving.
 With strong computational power and human creativity, I believe we can push the boundaries of our knowledge.
 
-<p><em>I’m preparing to apply for Ph.D. programs in <span style="color: #e74c3c;">Fall 2027</span>.<br>
+<p><em>I’m preparing to apply for Ph.D. programs in <span style="color: #e74c3c;">Fall 2027</span>.
 I’m also looking for new research opportunities and would be happy to connect with others who share similar interests.</em></p>
 
 ## News
