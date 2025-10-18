@@ -16,7 +16,7 @@ With strong computational power and human creativity, I believe we can push the 
 I’m also looking for new research opportunities and would be happy to connect with others who share similar interests.</em></p>
 
 ## News
-- 2025.08. Released <strong>[TDP](https://tree-diffusion-planner.github.io)</strong>, a paper on zero-shot test-time diffusion planning.
+- 2025.08. Released <strong>[TDP](https://tree-diffusion-planner.github.io)</strong>, a paper on zero-shot diffusion planning.
   <details>
     <summary>more info</summary>
     	I collaborated with Prof. Jaesik Park during my final semester at Seoul National University.
