@@ -9,7 +9,7 @@
   links: 
     project: https://tree-diffusion-planner.github.io
     arxiv: https://arxiv.org/abs/2508.21800
-    code: https://github.com/yeonsumia/tdp
+    code: https://github.com/SNU-VGILab/TDP
   tags: [diffusion-planning, zero-shot]
   description: #"We introduce a training-free zero-shot planning framework that addresses limitations of standard gradient-based guidance in complex scenarios by building trajectory trees through two-phase denoising: diverse exploration via particle guidance followed by task-specific refinement via conditional denoising. This bi-level sampling approach systematically explores diverse trajectory regions while effectively utilizing gradient information across the expanded solution space, offering a robust solution to test-time planning challenges. Extensive evaluation on Maze2D gold-picking, robot arm block manipulation, and AntMaze multi-goal exploration demonstrates superior performance over state-of-the-art planning approaches across diverse guidance functions."
 
