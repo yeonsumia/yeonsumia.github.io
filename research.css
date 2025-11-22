@@ -401,6 +401,7 @@
 .card-tags--left {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* Full-width description under the row */
