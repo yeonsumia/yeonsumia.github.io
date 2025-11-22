@@ -16,14 +16,14 @@ With strong computational power and human creativity, I believe we can push the 
 I’m also looking for new research opportunities and would be happy to connect with others who share similar interests.</em></p>
 
 ## News
-- 2025.10. Honored to receive NeurIPS 2025 Scholar Award. See you in San Diego! 🌊
-- 2025.08. Released <strong>[TDP](https://tree-diffusion-planner.github.io)</strong>, a paper on zero-shot diffusion planning.
+- <span class="date-badge">2025.10</span> Honored to receive NeurIPS 2025 Scholar Award. See you in San Diego! 🌊
+- <span class="date-badge">2025.08</span> Released <strong>[TDP](https://tree-diffusion-planner.github.io)</strong>, a paper on zero-shot diffusion planning.
   <details>
     <summary>more info</summary>
     	I collaborated with Prof. Jaesik Park during my final semester at Seoul National University.
   </details>
-- 2025.08. Honored to receive SNU CSE Outstanding Undergraduate Thesis Award.
-- 2025.06. Released <strong>[LOKI](https://loki-codesign.github.io)</strong>, a paper on morphology–control co-design.
+- <span class="date-badge">2025.08</span> Honored to receive SNU CSE Outstanding Undergraduate Thesis Award.
+- <span class="date-badge">2025.06</span> Released <strong>[LOKI](https://loki-codesign.github.io)</strong>, a paper on morphology–control co-design.
   <details>
     <summary>more info</summary>
     I collaborated with Ainaz Eftekhar under the supervision of Prof. Ranjay Krishna and Prof. Ali Farhadi during my exchange at the University of Washington. Experiencing summer in Seattle made the time especially memorable.
