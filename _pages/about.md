@@ -39,9 +39,9 @@ I’m also looking for new research opportunities and would be happy to connect 
 
 
 ## Honors & Awards
-- NeurIPS 2025 Scholar Award (2025.10.)
-- SNU CSE Outstanding Undergraduate Thesis Award (2025.08.)
-- Presidential Science Scholarship (2021.03. -- 2025.02.)  
-- Hanseong Nobel Scholarship (2019.03. -- 2021.02.)
+<div class="news-item"><span class="date-badge">2025.10</span> <span class="news-text">NeurIPS 2025 Scholar Award</span></div>
+<div class="news-item"><span class="date-badge">2025.08</span> <span class="news-text">SNU CSE Outstanding Undergraduate Thesis Award</span></div>
+<div class="news-item"><span class="date-badge">2021.03-2025.02</span> <span class="news-text">Presidential Science Scholarship</span></div>
+<div class="news-item"><span class="date-badge">2019.03-2021.02</span> <span class="news-text">Hanseong Nobel Scholarship</span></div>
 
 <link rel="stylesheet" href="{{ '/research.css' | relative_url }}">
