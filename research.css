@@ -436,7 +436,18 @@
     border-bottom: 1px solid #e9ecef;
     padding-right: 0;
     margin-bottom: 0.5rem;
+    align-content: center;
   }
+
+  .card-tags--left {
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
   .card-left .card-thumbnail {
     width: 100%;
     aspect-ratio: 5 / 2;
