@@ -16,6 +16,7 @@ With strong computational power and human creativity, I believe we can push the 
 I’m also looking for new research opportunities and would be happy to connect with others who share similar interests.</em></p>
 
 ## News
+- 2025.10. Honored to receive NeurIPS 2025 Scholar Award. See you in San Diego! 🌊
 - 2025.08. Released <strong>[TDP](https://tree-diffusion-planner.github.io)</strong>, a paper on zero-shot diffusion planning.
   <details>
     <summary>more info</summary>
@@ -37,6 +38,7 @@ I’m also looking for new research opportunities and would be happy to connect 
 
 
 ## Honors & Awards
+- NeurIPS 2025 Scholar Award (2025.10.)
 - SNU CSE Outstanding Undergraduate Thesis Award (2025.08.)
 - Presidential Science Scholarship (2021.03. -- 2025.02.)  
 - Hanseong Nobel Scholarship (2019.03. -- 2021.02.)
