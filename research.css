@@ -212,17 +212,6 @@
     font-weight: 500;
     /* text-transform: lowercase; */
   }
-
-  .date-badge {
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-    background: #007bff;
-    color: #fff;
-    border-radius: 10px;
-    font-size: 0.65rem;
-    font-weight: 500;
-    margin-right: 0.3rem;
-  }
   
   /* No results message */
   .no-results {
@@ -294,11 +283,6 @@
   [data-theme="dark"] .tag {
     background: #4a5568;
     color: #e2e8f0;
-  }
-
-  [data-theme="dark"] .date-badge {
-    background: #63b3ed;
-    color: #1a202c;
   }
   
   [data-theme="dark"] .no-results,
@@ -598,3 +582,21 @@ details summary {
   border-left-color: #63b3ed;
   color: #e2e8f0;
 }
+
+.date-badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: #007bff;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    margin-right: 0.3rem;
+}
+
+[data-theme="dark"] .date-badge {
+    background: #63b3ed;
+    color: #1a202c;
+}
+
+
