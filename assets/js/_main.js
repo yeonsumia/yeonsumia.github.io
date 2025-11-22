@@ -32,7 +32,7 @@ $(document).ready(function () {
     .matchMedia('(prefers-color-scheme: dark)')
     .addEventListener("change", (e) => {
       if (!localStorage.getItem("theme")) {
-        setTheme(e.matches ? "dark" : "light");
+        setTheme(e.matches ? "light" : "light"); // make light theme as default regardless of OS/browser preference
       }
     });
 
