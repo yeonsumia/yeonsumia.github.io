@@ -24,7 +24,7 @@ I’m also looking for new research opportunities and would be happy to connect 
   </details>
 </span></div>
 <div class="news-item"><span class="date-badge">2025.08</span> <span class="news-text">Honored to receive SNU CSE Outstanding Undergraduate Thesis Award.</span></div>
-<div class="news-item"><span class="date-badge">2025.06</span> <span class="news-text">Released <strong><a href="https://loki-codesign.github.io">LOKI</a></strong>, a paper on morphology–control co-design.
+<div class="news-item"><span class="date-badge">2025.06</span> <span class="news-text">Released <strong><a href="https://loki-codesign.github.io">LOKI</a></strong>, a paper on brain-body co-design.
   <details>
     <summary>more info</summary>
     I collaborated with Ainaz Eftekhar under the supervision of Prof. Ranjay Krishna and Prof. Ali Farhadi during my exchange at the University of Washington. Experiencing summer in Seattle made the time especially memorable.
