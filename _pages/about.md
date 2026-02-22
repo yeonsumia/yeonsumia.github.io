@@ -12,8 +12,7 @@ I explore the world through the lens of artificial intelligence.
 I value both problem framing and problem solving.
 With strong computational power and human creativity, I believe we can push the boundaries of our knowledge.
 
-<p><em>I’m preparing to apply for Ph.D. programs in <span style="color: #e74c3c;"><strong>Fall 2027</strong></span>.
-Currently I am seeking research opportunities focused on real-world robot manipulation and sim-to-real transfer.</em></p>
+<p><em>I’m preparing to apply for Ph.D. programs in <span style="color: #e74c3c;"><strong>Fall 2027</strong></span>.</em></p>
 
 ## News
 <div class="news-item"><span class="date-badge">2025.10</span> <span class="news-text">Honored to receive NeurIPS 2025 Scholar Award. See you in San Diego! 🌊</span></div>
