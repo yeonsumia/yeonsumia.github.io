@@ -40,7 +40,8 @@ With strong computational power and human creativity, I believe we can push the 
 ## Honors & Awards
 <div class="news-item"><span class="date-badge">2025.10</span> <span class="news-text">NeurIPS 2025 Scholar Award</span></div>
 <div class="news-item"><span class="date-badge">2025.08</span> <span class="news-text">SNU CSE Outstanding Undergraduate Thesis Award</span></div>
-<div class="news-item"><span class="date-badge">2021.03-2025.02</span> <span class="news-text">Presidential Science Scholarship</span></div>
-<div class="news-item"><span class="date-badge">2019.03-2021.02</span> <span class="news-text">Hanseong Nobel Scholarship</span></div>
+<div class="news-item"><span class="date-badge">2023.11-2025.08</span> <span class="news-text">Semiconductor Specialized University Scholarship | KIAT</span></div>
+<div class="news-item"><span class="date-badge">2021.03-2025.02</span> <span class="news-text">ROK Presidential Science Scholarship | Full 4-year Tuition & Research Grant</span></div>
+<div class="news-item"><span class="date-badge">2019.03-2021.02</span> <span class="news-text">Hanseong Nobel Scholarship | Hanseong Son Jae-han Scholarship Association</span></div>
 
 <link rel="stylesheet" href="{{ '/research.css' | relative_url }}">
