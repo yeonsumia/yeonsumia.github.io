@@ -3,8 +3,8 @@
   venue: NeurIPS
   year: "2025"
   status: 
-  thumbnail: images/tdp_2025/overview.png
-  hover_thumbnail: images/tdp_2025/overview_tasks.png
+  thumbnail: images/tdp_2025/tdp_github_main.png
+  hover_thumbnail: images/tdp_2025/tdp_github_main.png
   url: 
   links: 
     project: https://tree-diffusion-planner.github.io
@@ -19,7 +19,7 @@
   venue: NeurIPS
   year: "2025"
   status: 
-  thumbnail: images/loki_2025/overview_method.png
+  thumbnail: images/loki_2025/overview.png
   hover_thumbnail: images/loki_2025/overview.png
   url: https://loki-codesign.github.io
   links:
@@ -35,7 +35,7 @@
   year: "2024"
   status: 
   thumbnail: images/sb-cml_2024/overview.png
-  hover_thumbnail: images/sb-cml_2024/overview_tasks.png
+  hover_thumbnail: images/sb-cml_2024/overview.png
   url: 
   links:
     arxiv: https://arxiv.org/abs/2405.18758
