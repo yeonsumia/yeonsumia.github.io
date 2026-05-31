@@ -468,33 +468,42 @@
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  border: 1px solid #007bff;
+  border: 1.5px solid currentColor;
   background: white;
-  color: #007bff;
   border-radius: 50%;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: all 0.3s ease;
   font-size: 0.9rem;
 }
 
 .icon-btn:hover {
-  background: #007bff;
-  color: white;
+  color: white !important;
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
 }
 
-/* Dark mode support for icon buttons */
-[data-theme="dark"] .icon-btn {
-  background: #2d3748;
-  color: #63b3ed;
-  border-color: #63b3ed;
-}
+.icon-btn--arxiv        { color: #b31b1b; }
+.icon-btn--arxiv:hover  { background: #b31b1b; box-shadow: 0 2px 4px rgba(179,27,27,0.3); }
 
-[data-theme="dark"] .icon-btn:hover {
-  background: #63b3ed;
-  color: #1a202c;
-}
+.icon-btn--github        { color: #24292e; }
+.icon-btn--github:hover  { background: #24292e; box-shadow: 0 2px 4px rgba(36,41,46,0.3); }
+
+.icon-btn--project        { color: #007bff; }
+.icon-btn--project:hover  { background: #007bff; box-shadow: 0 2px 4px rgba(0,123,255,0.3); }
+
+.icon-btn--news        { color: #e67e22; }
+.icon-btn--news:hover  { background: #e67e22; box-shadow: 0 2px 4px rgba(230,126,34,0.3); }
+
+.icon-btn--link        { color: #6c757d; }
+.icon-btn--link:hover  { background: #6c757d; box-shadow: 0 2px 4px rgba(108,117,125,0.3); }
+
+/* Dark mode */
+[data-theme="dark"] .icon-btn          { background: #2d3748; }
+[data-theme="dark"] .icon-btn--arxiv   { color: #fc8181; }
+[data-theme="dark"] .icon-btn--github  { color: #e2e8f0; }
+[data-theme="dark"] .icon-btn--project { color: #63b3ed; }
+[data-theme="dark"] .icon-btn--news    { color: #f6ad55; }
+[data-theme="dark"] .icon-btn--link    { color: #a0aec0; }
+[data-theme="dark"] .icon-btn:hover    { color: #1a202c !important; }
 
 /* News toggle styling */
 details {
@@ -622,5 +631,15 @@ details summary {
 .news-text {
   flex: 1;
   min-width: 0; /* Allows text to wrap properly */
+}
+
+.news-text a {
+  color: #1a6fc4;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.news-text a:hover {
+  color: #0d47a0;
 }
 

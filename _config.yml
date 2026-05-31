@@ -22,10 +22,10 @@ repository               : "yeonsumia/yeonsumia.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "me.JPG"
+  avatar           : "main_image.jpg"
   name             : "Hyeonseong Jeon"
   pronouns         : "he/him"  
-  bio              : "You can call me Hyeon."
+  bio              : "🐈☕️🌲🌻🌊❄️"
   location         : "Seoul, KR"
   employer         : # "Seoul National University"
   uri              : # URL

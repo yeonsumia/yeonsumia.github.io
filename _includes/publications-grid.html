@@ -78,19 +78,23 @@
                     {% assign key = link[0] %}
                     {% assign url = link[1] %}
                     {% if key == 'project' %}
-                      <a class="icon-btn" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="Project Page">
+                      <a class="icon-btn icon-btn--project" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="Project Page">
                         <i class="fas fa-external-link-alt"></i>
                       </a>
                     {% elsif key == 'arxiv' %}
-                      <a class="icon-btn" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="arXiv Paper">
-                        <i class="fas fa-file-alt"></i>
+                      <a class="icon-btn icon-btn--arxiv" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="arXiv Paper">
+                        <i class="ai ai-arxiv"></i>
                       </a>
                     {% elsif key == 'code' %}
-                      <a class="icon-btn" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="Code Repository">
+                      <a class="icon-btn icon-btn--github" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="Code Repository">
                         <i class="fab fa-github"></i>
                       </a>
+                    {% elsif key == 'news' %}
+                      <a class="icon-btn icon-btn--news" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="News Article">
+                        <i class="fas fa-newspaper"></i>
+                      </a>
                     {% else %}
-                      <a class="icon-btn" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="{{ key | capitalize }}">
+                      <a class="icon-btn icon-btn--link" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="{{ key | capitalize }}">
                         <i class="fas fa-link"></i>
                       </a>
                     {% endif %}
