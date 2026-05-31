@@ -95,7 +95,8 @@
 
   img {
     max-width: 175px;
-    border-radius: 15%;
+    border-radius: 50%;
+    transform: rotate(12deg);
 
     @include breakpoint($large) {
       padding: 5px;
