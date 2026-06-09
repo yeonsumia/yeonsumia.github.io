@@ -19,8 +19,8 @@
   venue: NeurIPS
   year: "2025"
   status: 
-  thumbnail: images/loki_2025/overview.png
-  hover_thumbnail: images/loki_2025/overview.png
+  thumbnail: images/loki_2025/overview_v2.png
+  hover_thumbnail: images/loki_2025/overview_v2.png
   url: https://loki-codesign.github.io
   links:
     project: https://loki-codesign.github.io
