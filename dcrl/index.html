@@ -179,77 +179,83 @@
                 <h3 class="title is-4" id="q1">1. How well does $\texttt{DCRL}$ compare with prior offline GCRL methods?</h3>
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <h5 class="title is-5" style="margin-bottom: 1rem;">Long-Horizon Results</h5>
-                    <div style="display: flex; justify-content: center; align-items: flex-start; gap: 12px; width: 100%; margin: 0 auto 1.5rem auto;">
-                        <div style="flex: 1; text-align: center;">
+                    <div class="task-gallery task-gallery-ogbench">
+                        <div class="task-card">
                             <img src="./static/images/humanoidmaze-giant.png" class="interpolation-image" alt="humanoidmaze-giant" style="width: 100%; border-radius: 6px;"/>
                             <div style="font-size: 0.88rem; font-weight: 600; margin-top: 6px; font-family: monospace;">humanoidmaze-giant</div>
                         </div>
-                        <div style="flex: 1; text-align: center;">
+                        <div class="task-card">
                             <img src="./static/images/puzzle-4x5.png" class="interpolation-image" alt="puzzle-4x5" style="width: 100%; border-radius: 6px;"/>
                             <div style="font-size: 0.88rem; font-weight: 600; margin-top: 6px; font-family: monospace;">puzzle-4x5</div>
                         </div>
-                        <div style="flex: 1; text-align: center;">
+                        <div class="task-card">
                             <img src="./static/images/puzzle-4x6.png" class="interpolation-image" alt="puzzle-4x6" style="width: 100%; border-radius: 6px;"/>
                             <div style="font-size: 0.88rem; font-weight: 600; margin-top: 6px; font-family: monospace;">puzzle-4x6</div>
                         </div>
-                        <div style="flex: 1; text-align: center;">
+                        <div class="task-card">
                             <img src="./static/images/cube-quadruple.png" class="interpolation-image" alt="cube-quadruple" style="width: 100%; border-radius: 6px;"/>
                             <div style="font-size: 0.88rem; font-weight: 600; margin-top: 6px; font-family: monospace;">cube-quadruple</div>
                         </div>
-                        <div style="flex: 1; text-align: center;">
+                        <div class="task-card">
                             <img src="./static/images/cube-octuple.png" class="interpolation-image" alt="cube-octuple" style="width: 100%; border-radius: 6px;"/>
                             <div style="font-size: 0.88rem; font-weight: 600; margin-top: 6px; font-family: monospace;">cube-octuple</div>
                         </div>
                     </div>
-                    <img src="./static/images/long_ogbench_results.png" class="interpolation-image" alt="Long Horizon Table Results" width="80%"/>
+                    <div class="plot-scroll">
+                        <img src="./static/images/long_ogbench_results.png" class="interpolation-image plot-image plot-image-medium" alt="Long Horizon Table Results"/>
+                    </div>
                 </div>
                 <h2 class="subtitle">
                     On the five hardest long-horizon <a href="https://arxiv.org/abs/2410.20092" target="_blank">OGBench</a> tasks, $\texttt{DCRL}$ achieves the best average score, leads on $\texttt{humanoidmaze-giant}$ and both puzzle tasks, and is the only flat method with nonzero success on $\texttt{cube-octuple}$.
                 </h2>
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <h5 class="title is-5" style="margin-bottom: 1rem;">Standard-Horizon Results</h5>
-                    <img src="./static/images/standard_ogbench_results.png" class="interpolation-image" alt="Standard OGBench Results" width="80%"/>
+                    <div class="plot-scroll">
+                        <img src="./static/images/standard_ogbench_results.png" class="interpolation-image plot-image plot-image-medium" alt="Standard OGBench Results"/>
+                    </div>
                 </div>
                 <h2 class="subtitle">
                     Across 10 state-based and 10 pixel-based OGBench tasks, $\texttt{DCRL}$ achieves the best aggregate performance in both modalities.
                 </h2>
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <h5 class="title is-5" style="margin-bottom: 1rem;">CALVIN Results</h5>
-                    <div style="display: flex; justify-content: center; align-items: center; gap: 8px; width: 100%; margin: 0 auto 1.5rem auto;">
-                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div class="task-gallery task-gallery-calvin">
+                        <div class="task-card">
                             <img src="./static/images/w-0-initial.png" class="interpolation-image" alt="Initial State" style="width: 100%; border-radius: 6px;"/>
                             <div style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; line-height: 1.2;">Initial State</div>
                         </div>
-                        <div style="color: #7a7a7a; font-size: 1rem; flex-shrink: 0; margin-bottom: 1.5rem;">
+                        <div class="task-arrow">
                             <i class="fas fa-arrow-right"></i>
                         </div>
-                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div class="task-card">
                             <img src="./static/images/w-1-drawer-box.png" class="interpolation-image" alt="Open the drawer" style="width: 100%; border-radius: 6px;"/>
                             <div style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; line-height: 1.2;">1. Open drawer</div>
                         </div>
-                        <div style="color: #7a7a7a; font-size: 1rem; flex-shrink: 0; margin-bottom: 1.5rem;">
+                        <div class="task-arrow">
                             <i class="fas fa-arrow-right"></i>
                         </div>
-                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div class="task-card">
                             <img src="./static/images/w-2-lightbulb-box.png" class="interpolation-image" alt="Turn on the lightbulb" style="width: 100%; border-radius: 6px;"/>
                             <div style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; line-height: 1.2;">2. Turn on lightbulb</div>
                         </div>
-                        <div style="color: #7a7a7a; font-size: 1rem; flex-shrink: 0; margin-bottom: 1.5rem;">
+                        <div class="task-arrow">
                             <i class="fas fa-arrow-right"></i>
                         </div>
-                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div class="task-card">
                             <img src="./static/images/w-3-slider-box.png" class="interpolation-image" alt="Move slider to the left" style="width: 100%; border-radius: 6px;"/>
                             <div style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; line-height: 1.2;">3. Move slider left</div>
                         </div>
-                        <div style="color: #7a7a7a; font-size: 1rem; flex-shrink: 0; margin-bottom: 1.5rem;">
+                        <div class="task-arrow">
                             <i class="fas fa-arrow-right"></i>
                         </div>
-                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div class="task-card">
                             <img src="./static/images/w-4-led-box.png" class="interpolation-image" alt="Turn on the LED" style="width: 100%; border-radius: 6px;"/>
                             <div style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; line-height: 1.2;">4. Turn on LED</div>
                         </div>
                     </div>
-                    <img src="./static/images/calvin_state_pixel_combined.png" class="interpolation-image" alt="CALVIN Results" width="100%"/>
+                    <div class="plot-scroll">
+                        <img src="./static/images/calvin_state_pixel_combined.png" class="interpolation-image plot-image plot-image-wide" alt="CALVIN Results"/>
+                    </div>
                 </div>
                 <h2 class="subtitle">
                     On state-based <a href="https://arxiv.org/abs/2112.03227" target="_blank">CALVIN</a>, $\texttt{DCRL}$ achieves the highest four-subtask completion rate (8%). On pixel-based CALVIN, $\texttt{DCRL}$ completes at least three subtasks in 8% of rollouts and all four in 1%, whereas $\texttt{HIQL}$, $\texttt{TRL}$, and $\texttt{TD-n}$ never reach the third subtask.
@@ -259,7 +265,9 @@
                 <br>
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <!-- <h5 class="title is-5" style="margin-bottom: 1rem;">Propagation Horizon Ablation</h5> -->
-                    <img src="./static/images/nstep_comparison_all.png" class="interpolation-image" alt="Propagation Horizon Ablation" width="100%"/>
+                    <div class="plot-scroll">
+                        <img src="./static/images/nstep_comparison_all.png" class="interpolation-image plot-image plot-image-wide" alt="Propagation Horizon Ablation"/>
+                    </div>
                 </div>
                 <h2 class="subtitle">
                     At $n\in\{1,5\}$, $\texttt{DCRL-n}$ performs similarly to $\texttt{TD-n}$ and below $\texttt{TRL-n}$; for $n\ge25$, it maintains a clear margin over both. $\texttt{DCRL-n}$ has <strong>logarithmic</strong> bootstrap depth in the task horizon $H$, versus <strong>linear</strong> worst-case depth for $\texttt{TD-n}$ and $\texttt{TRL-n}$, and exhibits much slower empirical Q-error growth.
@@ -277,7 +285,9 @@
                 </h2>
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <!-- <h5 class="title is-5" style="margin-bottom: 1rem;">Performance (%) &amp; Throughput (step/s)</h5> -->
-                    <img src="./static/images/alternative_dnc_comparison.png" class="interpolation-image" alt="Comparison of Divide-and-Conquer Strategies" width="40%"/>
+                    <div class="plot-scroll">
+                        <img src="./static/images/alternative_dnc_comparison.png" class="interpolation-image plot-image plot-image-compact" alt="Comparison of Divide-and-Conquer Strategies"/>
+                    </div>
                 </div>
                 <h2 class="subtitle">
                     $\texttt{DCRL}$ reaches 93% success, over $1.7\times$ $\texttt{TRL}$'s success rate, at 24% lower throughput. Random splitting preserves performance but lowers throughput by creating deeper, less balanced trees. Reversing the learning order reduces success to 18%, consistent with parents bootstrapping from not-yet-updated children.
@@ -293,7 +303,9 @@
                     </ul>
                 </h2>
                 <div style="text-align: center; margin-bottom: 2rem;">
-                    <img src="./static/images/ablation_dnc.png" class="interpolation-image" alt="Ablation of DCRL recursion, propagation, and value-update rule" width="40%"/>
+                    <div class="plot-scroll">
+                        <img src="./static/images/ablation_dnc.png" class="interpolation-image plot-image plot-image-compact" alt="Ablation of DCRL recursion, propagation, and value-update rule"/>
+                    </div>
                 </div>
                 <h2 class="subtitle">
                     Removing recursion causes the largest performance drop, highlighting the recursive tree's central role. Removing propagation also substantially hurts performance, supporting $\texttt{DCRL}$'s separation of recursive behavior-value learning and optimal-value propagation. Max-based backups reduce success and throughput, consistent with selection-induced overestimation and subgoal-search overhead.

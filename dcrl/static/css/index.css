@@ -254,6 +254,110 @@ video.interpolation-image {
   overflow: hidden;
 }
 
+.plot-scroll {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.plot-image {
+  display: block;
+  height: auto;
+  max-width: none;
+  margin: 0 auto;
+}
+
+.plot-image-wide {
+  width: 100%;
+}
+
+.plot-image-medium {
+  width: 80%;
+}
+
+.plot-image-compact {
+  width: 40%;
+}
+
+.task-gallery {
+  display: grid;
+  align-items: start;
+  width: 100%;
+  margin: 0 auto 1.5rem;
+}
+
+.task-gallery-ogbench {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.task-gallery-calvin {
+  grid-template-columns: repeat(4, minmax(0, 1fr) auto) minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.task-card {
+  min-width: 0;
+  text-align: center;
+}
+
+.task-gallery-calvin .task-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-arrow {
+  color: #7a7a7a;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .plot-scroll {
+    margin-inline: -0.75rem;
+    padding-inline: 0.75rem;
+  }
+
+  .plot-image-wide,
+  .plot-image-medium {
+    width: 680px;
+  }
+
+  .plot-image-compact {
+    width: 420px;
+  }
+
+  .task-gallery-ogbench {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .task-gallery-calvin {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.65rem;
+    width: min(100%, 300px);
+  }
+
+  .task-gallery-calvin .task-card {
+    width: 100%;
+  }
+
+  .task-gallery-calvin .task-arrow {
+    margin: -0.1rem 0;
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 420px) {
+  .task-gallery-ogbench {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100%, 280px);
+  }
+}
+
 
 .interpolation-video-column {
 }
