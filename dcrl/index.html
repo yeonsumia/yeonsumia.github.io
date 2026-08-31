@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="DCRL recursively learns short-segment values before long-segment values for long-horizon offline goal-conditioned reinforcement learning.">
+    <meta name="keywords" content="Recursive Value Learning for Long-Horizon Offline Goal-Conditioned RL">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="color-scheme" content="light dark"> -->
+    <title>Recursive Value Learning for Long-Horizon Offline Goal-Conditioned RL</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <!-- MathJax Configuration -->
+    <script type="text/javascript">
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <!-- Load MathJax -->
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+</head>
+<body>
+
+<!--<nav class="navbar" role="navigation" aria-label="main navigation">-->
+<!--    <div class="navbar-brand">-->
+<!--        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">-->
+<!--            <span aria-hidden="true"></span>-->
+<!--            <span aria-hidden="true"></span>-->
+<!--            <span aria-hidden="true"></span>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<section class="hero hero-premium">
+    <div class="hero-body">
+      <div class="container is-max-desktop" style="max-width: 1200px;">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+                    <h1 class="title is-3 publication-title">
+                        Recursive Value Learning for Long-Horizon Offline Goal-Conditioned RL
+                    </h1>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"> 
+                            <span><a href="https://yeonsumia.github.io">Hyeonseong Jeon</a><sup>1</sup>, </span>
+                            <span><a href="https://youngwoon.github.io">Youngwoon Lee</a><sup>2</sup></span>
+                            
+                        </span>
+                    </div>
+                      <div class="is-size-6 publication-authors">
+                        <span class="author-block"><sup>1</sup>Yonsei University, </span>
+                        <span class="author-block"><sup>2</sup>Seoul National University</span>
+                      </div>
+                      <div class="is-size-6 publication-authors" style="margin-top: 0.5em; font-family: 'Courier New', Courier, monospace;">
+                        <span class="author-block"><a href="mailto:yeonsumia@snu.ac.kr" style="color: inherit;">yeonsumia@snu.ac.kr</a>, </span>
+                        <span class="author-block"><a href="mailto:youngwoon@snu.ac.kr" style="color: inherit;">youngwoon@snu.ac.kr</a></span>
+                      </div>
+                      <!-- <div class="is-size-5 publication-authors">
+                            <span class="author-block2">arXiv 2026</span> 
+                      </div> -->
+                    <div class="column has-text-centered">
+                        <span class="publication-links">
+                            <span class="link-block"><a target="_blank" href="https://arxiv.org/pdf/xxxx.xxxxx" class="external-link button is-normal is-rounded is-dark"><span class="icon"><svg class="svg-inline--fa fa-file fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path></svg></span><span>Paper</span></a></span>
+                            <span class="link-block"><a target="_blank" href="https://github.com/yeonsumia/dcrl" class="external-link button is-normal is-rounded is-dark"><span class="icon"><svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></span><span>Code</span></a></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div> <!-- end container -->
+</section>
+
+<br>
+
+<section class="section sidebar-layout">
+    <!-- Sidebar -->
+    <aside class="menu fixed-sidebar is-hidden-touch">
+                    <p class="menu-label" style="font-size: 1.2em; font-weight: bold; color: #004085;">Contents</p>
+                    <ul class="menu-list" style="font-size: 1.1em;">
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#method">Method</a></li>
+                        <li><a href="#experiments">Experiments</a></li>
+                        <li><a href="#remarks">Remarks</a></li>
+                        <li><a href="#citation">Citation</a></li>
+                    </ul>
+    </aside>
+    
+    <div class="container is-max-desktop" style="max-width: 1200px;">
+                <!-- <h2 class="subtitle">
+                        <div class="news-item"><span class="date-badge">2026.07</span> <span class="news-text">Release a full paper.</span></div>
+                    </h2> -->
+                <div id="overview" class="content-section">
+                    <!-- <br> -->
+                    <h2 class="title is-3 section-title">Overview</h2>
+                    <h2 class="subtitle overview-summary-box">
+                        <strong>Problem.</strong> Long-range estimates may depend on inaccurate shorter-range values, while max-based backups can amplify overestimation.
+                        <br><br>
+                        <strong>Idea.</strong> $\texttt{DCRL}$ recursively learns short-segment values before long-segment values using exact route factorization, then propagates across trajectories to recover optimal values.
+                    </h2>
+                    <div style="display: flex; justify-content: center;">
+                        <video class="interpolation-image" width="80%" controls>
+                            <source src="./static/videos/present_dcrl_v3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+            <!-- <h2 class="subtitle">
+                We propose <strong>$\texttt{DCRL}$ ($\underline{\texttt{D}}$ivide-and-$\underline{\texttt{C}}$onquer $\underline{\texttt{R}}$einforcement $\underline{\texttt{L}}$earning)</strong> for scalable offline goal-conditioned RL.
+            </h2> -->
+            
+
+        </div>
+        <hr>
+        <div id="method" class="content-section">
+            <h2 class="title is-3 section-title">Method</h2>
+            <h2 class="subtitle">
+                $\texttt{DCRL}$ makes the dependency between short- and long-segment values explicit through recursive divide-and-conquer learning.
+            </h2>
+            <div style="display: flex; justify-content: center;">
+                <video id="method-animation" autoplay muted loop playsinline class="interpolation-image" width="95%">
+                    <source src="./static/videos/dcrl_cropped.mov" type="video/mp4">
+                </video>
+            </div>
+            <div class="subtitle method-step-box">
+                <div class="method-step-grid">
+                    <strong>Divide:</strong><span>Recursively split each segment at its midpoint until reaching single-step leaves.</span>
+                    <strong>Conquer:</strong><span>Learn values from leaves to root, so each parent is updated only after its children.</span>
+                </div>
+            </div>
+            <h2 class="subtitle">
+                For a demonstrated route from state \(s\) to goal \(g\), $\texttt{DCRL}$ chooses its midpoint \(w\) and exactly factorizes its behavior value without selecting among noisy alternatives:
+                $V_\tau(s,g) = V_\tau(s,w) \cdot V_\tau(w,g)$.
+                The balanced tree gives $\texttt{DCRL}$ logarithmic bootstrap depth in the horizon, compared with linear worst-case depth for standard backups.
+                <br><br>
+                <strong>Parallelize recursive value learning.</strong> Slot scheduling interleaves multiple trees, preserving child-to-parent ordering within each slot while maintaining diverse minibatches.
+            </h2>
+            <div style="display: flex; justify-content: center;">
+                <video id="slot-animation" autoplay muted loop playsinline class="interpolation-image" width="75%">
+                    <source src="./static/videos/slot_cropped_v4.mov" type="video/mp4">
+                </video>
+            </div>
+            <br>
+            <h2 class="subtitle">
+                <strong>Recover optimal values.</strong> Exact factorization learns behavior values ($V_\tau$) along demonstrated routes, but optimal routes may require composing segments across trajectories. A separate $n$-step propagation objective performs this composition, refining behavior values toward optimality ($V^\ast$).
+            </h2>
+            <div style="display: flex; justify-content: center;">
+                <video id="optimality-animation" autoplay muted loop playsinline class="interpolation-image" width="60%">
+                    <source src="./static/images/recover_optimality.mov" type="video/mp4">
+                </video>
+            </div>
+        </div> <!-- end method section -->
+        <hr>
+
+
+<!-- Qualitative results -->
+        <div id="experiments" class="content-section">
+            <div class="column is-full-width">
+                <h2 class="title is-3 section-title" id="locomotion">Experiments</h2>
+                <h3 class="title is-4" id="q1">1. How well does $\texttt{DCRL}$ compare with prior offline GCRL methods?</h3>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h5 class="title is-5" style="margin-bottom: 1rem;">Long-Horizon Results</h5>
+                    <div style="display: flex; justify-content: center; align-items: flex-start; gap: 12px; width: 100%; margin: 0 auto 1.5rem auto;">
+                        <div style="flex: 1; text-align: center;">
+                            <img src="./static/images/humanoidmaze-giant.png" class="interpolation-image" alt="humanoidmaze-giant" style="width: 100%; border-radius: 6px;"/>
+                            <div style="font-size: 0.88rem; font-weight: 600; margin-top: 6px; font-family: monospace;">humanoidmaze-giant</div>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <img src="./static/images/puzzle-4x5.png" class="interpolation-image" alt="puzzle-4x5" style="width: 100%; border-radius: 6px;"/>
+                            <div style="font-size: 0.88rem; font-weight: 600; margin-top: 6px; font-family: monospace;">puzzle-4x5</div>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <img src="./static/images/puzzle-4x6.png" class="interpolation-image" alt="puzzle-4x6" style="width: 100%; border-radius: 6px;"/>
+                            <div style="font-size: 0.88rem; font-weight: 600; margin-top: 6px; font-family: monospace;">puzzle-4x6</div>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <img src="./static/images/cube-quadruple.png" class="interpolation-image" alt="cube-quadruple" style="width: 100%; border-radius: 6px;"/>
+                            <div style="font-size: 0.88rem; font-weight: 600; margin-top: 6px; font-family: monospace;">cube-quadruple</div>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <img src="./static/images/cube-octuple.png" class="interpolation-image" alt="cube-octuple" style="width: 100%; border-radius: 6px;"/>
+                            <div style="font-size: 0.88rem; font-weight: 600; margin-top: 6px; font-family: monospace;">cube-octuple</div>
+                        </div>
+                    </div>
+                    <img src="./static/images/long_ogbench_results.png" class="interpolation-image" alt="Long Horizon Table Results" width="80%"/>
+                </div>
+                <h2 class="subtitle">
+                    On the five hardest long-horizon <a href="https://arxiv.org/abs/2410.20092" target="_blank">OGBench</a> tasks, $\texttt{DCRL}$ achieves the best average score, leads on $\texttt{humanoidmaze-giant}$ and both puzzle tasks, and is the only flat method with nonzero success on $\texttt{cube-octuple}$.
+                </h2>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h5 class="title is-5" style="margin-bottom: 1rem;">Standard-Horizon Results</h5>
+                    <img src="./static/images/standard_ogbench_results.png" class="interpolation-image" alt="Standard OGBench Results" width="80%"/>
+                </div>
+                <h2 class="subtitle">
+                    Across 10 state-based and 10 pixel-based OGBench tasks, $\texttt{DCRL}$ achieves the best aggregate performance in both modalities.
+                </h2>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h5 class="title is-5" style="margin-bottom: 1rem;">CALVIN Results</h5>
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 8px; width: 100%; margin: 0 auto 1.5rem auto;">
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <img src="./static/images/w-0-initial.png" class="interpolation-image" alt="Initial State" style="width: 100%; border-radius: 6px;"/>
+                            <div style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; line-height: 1.2;">Initial State</div>
+                        </div>
+                        <div style="color: #7a7a7a; font-size: 1rem; flex-shrink: 0; margin-bottom: 1.5rem;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <img src="./static/images/w-1-drawer-box.png" class="interpolation-image" alt="Open the drawer" style="width: 100%; border-radius: 6px;"/>
+                            <div style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; line-height: 1.2;">1. Open drawer</div>
+                        </div>
+                        <div style="color: #7a7a7a; font-size: 1rem; flex-shrink: 0; margin-bottom: 1.5rem;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <img src="./static/images/w-2-lightbulb-box.png" class="interpolation-image" alt="Turn on the lightbulb" style="width: 100%; border-radius: 6px;"/>
+                            <div style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; line-height: 1.2;">2. Turn on lightbulb</div>
+                        </div>
+                        <div style="color: #7a7a7a; font-size: 1rem; flex-shrink: 0; margin-bottom: 1.5rem;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <img src="./static/images/w-3-slider-box.png" class="interpolation-image" alt="Move slider to the left" style="width: 100%; border-radius: 6px;"/>
+                            <div style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; line-height: 1.2;">3. Move slider left</div>
+                        </div>
+                        <div style="color: #7a7a7a; font-size: 1rem; flex-shrink: 0; margin-bottom: 1.5rem;">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <img src="./static/images/w-4-led-box.png" class="interpolation-image" alt="Turn on the LED" style="width: 100%; border-radius: 6px;"/>
+                            <div style="font-size: 0.85rem; font-weight: 600; margin-top: 6px; line-height: 1.2;">4. Turn on LED</div>
+                        </div>
+                    </div>
+                    <img src="./static/images/calvin_state_pixel_combined.png" class="interpolation-image" alt="CALVIN Results" width="100%"/>
+                </div>
+                <h2 class="subtitle">
+                    On state-based <a href="https://arxiv.org/abs/2112.03227" target="_blank">CALVIN</a>, $\texttt{DCRL}$ achieves the highest four-subtask completion rate (8%). On pixel-based CALVIN, $\texttt{DCRL}$ completes at least three subtasks in 8% of rollouts and all four in 1%, whereas $\texttt{HIQL}$, $\texttt{TRL}$, and $\texttt{TD-n}$ never reach the third subtask.
+                </h2>
+                <br><br>
+                <h3 class="title is-4" id="q2">2. Is $\texttt{DCRL-n}$ better than $\texttt{TD-n}$ and $\texttt{TRL-n}$ across propagation and task horizons?</h3>
+                <br>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <!-- <h5 class="title is-5" style="margin-bottom: 1rem;">Propagation Horizon Ablation</h5> -->
+                    <img src="./static/images/nstep_comparison_all.png" class="interpolation-image" alt="Propagation Horizon Ablation" width="100%"/>
+                </div>
+                <h2 class="subtitle">
+                    At $n\in\{1,5\}$, $\texttt{DCRL-n}$ performs similarly to $\texttt{TD-n}$ and below $\texttt{TRL-n}$; for $n\ge25$, it maintains a clear margin over both. $\texttt{DCRL-n}$ has <strong>logarithmic</strong> bootstrap depth in the task horizon $H$, versus <strong>linear</strong> worst-case depth for $\texttt{TD-n}$ and $\texttt{TRL-n}$, and exhibits much slower empirical Q-error growth.
+                </h2>
+                <br><br>
+                <h3 class="title is-4" id="q3">3. Comparison with alternative divide-and-conquer strategies</h3>
+                <h2 class="subtitle">
+                    We compare $\texttt{DCRL}$ with alternative strategies for organizing divide-and-conquer value learning:
+                    <ul style="list-style-type: disc; padding-left: 1.5em; margin-top: 0.8em; margin-bottom: 1.0em; text-align: left; font-size: 0.9em;">
+                        <li>$\texttt{Curriculum}$ <small>($\Delta$)</small>: gradually increases the maximum segment length over $H/\Delta$ stages, where $\Delta$ is the segment-length increment per stage.</li>
+                        <li>$\texttt{TRL}$ <small>($\lambda$)</small>: up-weights short state-goal pairs and down-weights long ones using $w(s_i,s_j):=\bigl(1+\log_\gamma Q(s_i,a_i,s_j)\bigr)^{-\lambda}$.</li>
+                        <li>$\texttt{DCRL}$ <small>(w/ random split)</small>: replaces the midpoint with a random in-trajectory split.</li>
+                        <li>$\texttt{DCRL}$ <small>(w/ reverse order)</small>: processes each recursive tree from parents to children.</li>
+                    </ul>
+                </h2>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <!-- <h5 class="title is-5" style="margin-bottom: 1rem;">Performance (%) &amp; Throughput (step/s)</h5> -->
+                    <img src="./static/images/alternative_dnc_comparison.png" class="interpolation-image" alt="Comparison of Divide-and-Conquer Strategies" width="40%"/>
+                </div>
+                <h2 class="subtitle">
+                    $\texttt{DCRL}$ reaches 93% success, over $1.7\times$ $\texttt{TRL}$'s success rate, at 24% lower throughput. Random splitting preserves performance but lowers throughput by creating deeper, less balanced trees. Reversing the learning order reduces success to 18%, consistent with parents bootstrapping from not-yet-updated children.
+                </h2>
+                <br>
+                <h3 class="title is-4" id="q4">4. Ablation studies</h3>
+                <h2 class="subtitle">
+                    We ablate the three core components of $\texttt{DCRL}$:
+                    <ul style="list-style-type: disc; padding-left: 1.5em; margin-top: 0.8em; margin-bottom: 1.0em; text-align: left; font-size: 0.9em;">
+                        <li>$\texttt{DCRL}$ <small>(w/o recursion)</small>: replaces recursive scheduling with i.i.d. sampling and adds one-step grounding.</li>
+                        <li>$\texttt{DCRL}$ <small>(w/o propagation)</small>: uses recursive value learning alone to recover optimal values.</li>
+                        <li>$\texttt{DCRL}$ <small>(w/ max-backup)</small>: replaces exact factorization with subgoal maximization.</li>
+                    </ul>
+                </h2>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <img src="./static/images/ablation_dnc.png" class="interpolation-image" alt="Ablation of DCRL recursion, propagation, and value-update rule" width="40%"/>
+                </div>
+                <h2 class="subtitle">
+                    Removing recursion causes the largest performance drop, highlighting the recursive tree's central role. Removing propagation also substantially hurts performance, supporting $\texttt{DCRL}$'s separation of recursive behavior-value learning and optimal-value propagation. Max-based backups reduce success and throughput, consistent with selection-induced overestimation and subgoal-search overhead.
+                </h2>
+                <!-- <details style="margin: 1.5rem 0 2rem;">
+                    <summary class="title is-5" style="cursor: pointer;">Additional training-budget analysis</summary>
+                    <div style="text-align: center; margin: 1.5rem 0 2rem;">
+                        <img src="./static/images/comparison_training_budget.png" class="interpolation-image" alt="Comparison of performance and training budgets" width="50%"/>
+                    </div>
+                    <h2 class="subtitle">
+                        Across training budgets, $\texttt{DCRL}$ reaches 90% success in under three hours, while $\texttt{TRL}$ remains below 80% after eight hours.
+                    </h2>
+                </details> -->
+            </div>
+        </div>
+        <hr>
+
+<!-- conclusion -->
+        <div id="remarks" class="content-section">
+            <div class="column is-full-width">
+                <h2 class="title is-3 section-title">Remarks</h2>
+                <h2 class="subtitle">
+                    $\texttt{DCRL}$ demonstrates the potential of recursive value learning across diverse long-horizon goal-reaching tasks, while leaving two important directions for future work.
+                    <br><br><strong>1. Extending to stochastic dynamics.</strong>
+                    <br>Like other triangle-inequality methods, $\texttt{DCRL}$ assumes deterministic dynamics. Under stochastic dynamics, exact factorization generally fails because the expectation of a product need not factorize (i.e., $\mathbb{E}[XY] \neq \mathbb{E}[X]\mathbb{E}[Y]$). Extending recursive sampling beyond this assumption remains an important direction.
+                    <br><br><strong>2. Understanding when hierarchy helps.</strong>
+                    <br>Hierarchical methods outperform $\texttt{DCRL}$ on cube-manipulation tasks, although these tasks have shorter task horizons than $\texttt{humanoidmaze-giant}$, where $\texttt{DCRL}$ excels. Their difficulty therefore does not stem solely from horizon length. Understanding when hierarchy remains beneficial may clarify how the <a href="https://arxiv.org/abs/1810.12429" target="_blank">curse of horizon</a> interacts with other sources of task difficulty in GCRL.
+                </h2>
+            </div>
+        </div>
+        <hr>
+
+<!-- Citation -->
+        <div id="citation" class="content-section">
+            <div class="column is-full-width">
+                <h2 class="title is-3 section-title">Citation</h2>
+                <div class="content has-text-justified">
+                    <div style="position: relative; max-width: 800px; margin: 0 auto;">
+                        <button class="button is-small is-light" style="position: absolute; top: 10px; right: 10px; z-index: 10;" title="Copy Citation" onclick="navigator.clipboard.writeText(document.getElementById('bibtex-content').innerText); this.innerHTML = '<span class=\'icon\'><i class=\'fas fa-check\' style=\'color: #2e8b57;\'></i></span>'; setTimeout(() => this.innerHTML = '<span class=\'icon\'><i class=\'far fa-copy\'></i></span>', 2000);">
+                            <span class="icon"><i class="far fa-copy"></i></span>
+                        </button>
+                        <pre style="border-radius: 8px; padding: 2rem 1.5rem 1.5rem 1.5rem; background-color: #f5f5f5; overflow-x: auto;"><code id="bibtex-content">@article{jeon2026recursive,
+  title={Recursive Value Learning for Long-Horizon Offline Goal-Conditioned RL},
+  author={Jeon, Hyeonseong and Lee, Youngwoon},
+  journal={arXiv preprint arXiv:xxxx.xxxxx},
+  year={2026}
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer" style="background-color: #f5f5f5">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        This website is based on the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
+                        4.0</a> licensed
+                        <a rel="template" href="https://github.com/nerfies/nerfies.github.io">Nerfies website</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
