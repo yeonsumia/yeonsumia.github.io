@@ -687,6 +687,15 @@ html {
     line-height: 1.6;
 }
 
+@media screen and (max-width: 768px) {
+    .content-section .subtitle,
+    .content-section p {
+        text-align: left;
+        text-wrap: pretty;
+        overflow-wrap: anywhere;
+    }
+}
+
 /* Edit this to change font size for paragraphs and news item */
 .content-section .subtitle,
 .content-section p,
