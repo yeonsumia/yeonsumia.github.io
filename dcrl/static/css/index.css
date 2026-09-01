@@ -4,6 +4,10 @@ body {
     font-size: 1.0em;
 }
 
+.mobile-project-nav {
+  display: none;
+}
+
 .link-highlight {
   color: blue;
 }
@@ -693,6 +697,83 @@ html {
         text-align: left;
         text-wrap: pretty;
         overflow-wrap: anywhere;
+        line-height: 1.55;
+    }
+
+    .mobile-project-nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        min-height: 62px;
+        padding: 0.55rem 0.8rem;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid #dfe6ee;
+        box-shadow: 0 1px 5px rgba(0, 43, 94, 0.08);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .mobile-project-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #1f2937;
+        font-family: 'Google Sans', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+    }
+
+    .mobile-project-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: #004085;
+        color: #fff;
+        font-weight: 800;
+    }
+
+    .mobile-project-actions {
+        display: flex;
+        gap: 0.45rem;
+    }
+
+    .mobile-project-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        min-height: 40px;
+        padding: 0.45rem 0.65rem;
+        border: 1px solid #d7e0ea;
+        border-radius: 11px;
+        color: #526172;
+        font-size: 0.82rem;
+        font-weight: 600;
+        background: #fff;
+    }
+
+    .mobile-project-button .icon {
+        margin: 0;
+    }
+
+    .hero-publication-links {
+        display: none;
+    }
+
+    .content-section video.interpolation-image {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto;
+    }
+
+    html {
+        scroll-padding-top: 74px;
     }
 }
 
@@ -701,6 +782,14 @@ html {
 .content-section p,
 .news-item {
     font-size: 1.1rem; 
+}
+
+@media screen and (max-width: 768px) {
+    .content-section .subtitle,
+    .content-section p,
+    .news-item {
+        font-size: 1rem;
+    }
 }
 
 /* Robust CSS Grid Sidebar Layout */
