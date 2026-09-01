@@ -737,23 +737,14 @@ html {
     .mobile-project-brand {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
         color: #1f2937;
-        font-family: 'Google Sans', sans-serif;
         font-size: 1.05rem;
         font-weight: 700;
     }
 
-    .mobile-project-mark {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        border-radius: 10px;
-        background: #004085;
-        color: #fff;
-        font-weight: 800;
+    .mobile-project-name {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 700;
     }
 
     .mobile-project-actions {
