@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css?v=20260901-4">
+    <link rel="stylesheet" href="./static/css/index.css?v=20260901-5">
     <link rel="icon" href="./static/images/favicon.svg">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -165,7 +165,9 @@
             </div>
             <h2 class="subtitle">
                 For a demonstrated route from state \(s\) to goal \(g\), $\texttt{DCRL}$ chooses its midpoint \(w\) and exactly factorizes its behavior value without selecting among noisy alternatives:
-                $V_\tau(s,g) = V_\tau(s,w) \cdot V_\tau(w,g)$.
+                \[
+                V_\tau(s,g) = V_\tau(s,w) \cdot V_\tau(w,g).
+                \]
                 The balanced tree gives $\texttt{DCRL}$ logarithmic bootstrap depth in the horizon, compared with linear worst-case depth for standard backups.
                 <br><br>
                 <strong>Parallelize recursive value learning.</strong> Slot scheduling interleaves multiple trees, preserving child-to-parent ordering within each slot while maintaining diverse minibatches.

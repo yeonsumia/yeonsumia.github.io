@@ -884,6 +884,11 @@ mjx-container ::selection, mjx-container *::selection {
     text-decoration: underline;
 }
 
+#q3 + .subtitle,
+#q4 + .subtitle {
+    margin-top: 0.75rem;
+}
+
 /* Match the light navy wash used by the SRL Lab proposition boxes. */
 .overview-summary-box {
     max-width: 900px;
