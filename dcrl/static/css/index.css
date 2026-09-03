@@ -254,7 +254,7 @@ body {
 }
 
 video.interpolation-image {
-  border-radius: 9px;
+  border-radius: 15px;
   overflow: hidden;
 }
 
