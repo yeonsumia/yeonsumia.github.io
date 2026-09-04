@@ -357,6 +357,7 @@
   margin-left: 1rem;
   /* border-right: 1px solid #e9ecef; */
   padding-right: 1rem;
+  padding-bottom: 1rem;
 }
 
 .card-left.card-left--video .card-thumbnail {
@@ -443,7 +444,6 @@
 .card-main {
   display: flex;          /* left and right columns */
   align-items: center;
-  padding-bottom: 1rem;
 }
 
 .card-description--full {
