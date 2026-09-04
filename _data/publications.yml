@@ -39,7 +39,7 @@
     project: https://loki-codesign.github.io
     arxiv: https://arxiv.org/abs/2505.21665
     code: https://github.com/yeonsumia/loki
-  tags: [co-design, quality-diversity, reinforcement-learning]
+  tags: [co-design, quality-diversity, evolutionary RL]
   description: #"We introduce a compute-efficient framework for co-designing morphologies and control policies that learns convergent functions (shared control policies trained across clusters of morphologically similar designs) while promoting divergent forms through Dynamic Local Search (DLS), reducing training cost per design by 78% fewer simulation steps and 40% less compute. This approach enables exploration of 780 times more designs than traditional methods, discovering diverse high-performing morphologies ranging from quadrupeds to crabs, bipedals, and spinners that significantly outperform prior work in both diversity and adaptability. Extensive evaluation demonstrates superior transfer performance to unseen downstream tasks in agility, stability, and manipulation domains, with substantially greater sample efficiency than existing co-design methods."
 
 - title: Learning to Continually Learn with the Bayesian Principle
