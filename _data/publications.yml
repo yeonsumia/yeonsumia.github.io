@@ -4,6 +4,7 @@
   year: "2026"
   status:
   thumbnail_video: images/dcrl_thumbnail.mp4
+  thumbnail_top_margin: true
   links:
     project: https://yeonsumia.github.io/dcrl/
     arxiv: https://arxiv.org/abs/2609.02237
@@ -34,6 +35,7 @@
   status: 
   thumbnail: images/loki_2025/overview_v2.png
   hover_thumbnail: images/loki_2025/overview_v2.png
+  thumbnail_top_margin: true
   url: https://loki-codesign.github.io
   links:
     project: https://loki-codesign.github.io

@@ -363,6 +363,10 @@
   aspect-ratio: 1592 / 580;
 }
 
+.card-left--top-spaced .card-thumbnail {
+  margin-top: 0.75rem;
+}
+
 @media (min-width: 769px) {
   .card-left.card-left--video {
     width: 340px;
