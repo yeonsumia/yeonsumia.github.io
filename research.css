@@ -357,12 +357,10 @@
   margin-left: 1rem;
   /* border-right: 1px solid #e9ecef; */
   padding-right: 1rem;
-  padding-bottom: 0.75rem;
 }
 
-.card-left--large {
-  width: 360px;
-  flex-basis: 360px;
+.card-left.card-left--video .card-thumbnail {
+  aspect-ratio: 1592 / 580;
 }
 
 .card-thumbnail video.main-video {
@@ -434,6 +432,7 @@
 .card-main {
   display: flex;          /* left and right columns */
   align-items: center;
+  padding-bottom: 0.75rem;
 }
 
 .card-description--full {

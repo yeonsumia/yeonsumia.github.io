@@ -27,7 +27,7 @@
       {% for pub in include.pubs %}
         <div class="publication-card" data-tags="{% if pub.tags %}{{ pub.tags | join: ',' }}{% endif %}">
           <div class="card-main">
-            <div class="card-left{% if pub.thumbnail_size == 'large' %} card-left--large{% endif %}">
+            <div class="card-left{% if pub.thumbnail_video %} card-left--video{% endif %}">
               <div class="card-thumbnail">
                 {% if pub.thumbnail_video %}
                   <video class="main-video" autoplay loop muted playsinline preload="metadata" aria-label="Animated thumbnail for {{ pub.title }}">
