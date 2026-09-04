@@ -15,6 +15,7 @@ With strong computational power and human creativity, I believe we can push the 
 <p><em>I’m preparing to apply for Ph.D. programs in <span style="color: #e74c3c;"><strong>Fall 2027</strong></span>.</em></p>
 
 ## News
+<div class="news-item"><span class="date-badge">2026.09</span> <span class="news-text">Released <strong><a href="https://yeonsumia.github.io/dcrl/">DCRL</a></strong>, a paper on goal-conditioned RL.</span></div>
 <div class="news-item"><span class="date-badge">2025.10</span> <span class="news-text">Honored to receive NeurIPS 2025 Scholar Award. See you in San Diego! 🌊</span></div>
 <div class="news-item"><span class="date-badge">2025.08</span> <span class="news-text">Released <strong><a href="https://tree-diffusion-planner.github.io">TDP</a></strong>, a paper on test-time diffusion planning.
   <details>

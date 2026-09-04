@@ -29,7 +29,11 @@
           <div class="card-main">
             <div class="card-left">
               <div class="card-thumbnail">
-                {% if pub.thumbnail %}
+                {% if pub.thumbnail_video %}
+                  <video class="main-video" autoplay loop muted playsinline preload="metadata" aria-label="Animated thumbnail for {{ pub.title }}">
+                    <source src="/{{ pub.thumbnail_video }}" type="video/mp4">
+                  </video>
+                {% elsif pub.thumbnail %}
                   <img class="main-img" src="/{{ pub.thumbnail }}" alt="Thumbnail for {{ pub.title }}" loading="lazy">
                   <img class="hover-img" src="/{{ pub.hover_thumbnail }}" alt="Hover Thumbnail for {{ pub.title }}" loading="lazy">
                 {% else %}
@@ -148,5 +152,4 @@
     });
   });
 </script>
-
 
