@@ -359,6 +359,11 @@
   padding-right: 1rem;
 }
 
+.card-left--large {
+  width: 420px;
+  flex-basis: 420px;
+}
+
 .card-thumbnail video.main-video {
   position: absolute;
   width: 100%;

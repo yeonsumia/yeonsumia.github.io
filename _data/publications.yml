@@ -4,6 +4,7 @@
   year: "2026"
   status:
   thumbnail_video: images/dcrl_thumbnail.mp4
+  thumbnail_size: large
   links:
     project: https://yeonsumia.github.io/dcrl/
     arxiv: https://arxiv.org/abs/2609.02237
