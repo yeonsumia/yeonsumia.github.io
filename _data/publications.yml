@@ -3,8 +3,7 @@
   venue: arXiv
   year: "2026"
   status:
-  thumbnail: images/dcrl_main_figure_no_text.png
-  hover_thumbnail: images/dcrl_main_figure_no_text.png
+  thumbnail_video: images/dcrl_thumbnail.mp4
   links:
     project: https://yeonsumia.github.io/dcrl/
     arxiv: https://arxiv.org/abs/2609.02237
@@ -56,4 +55,3 @@
     code: https://github.com/soochan-lee/SB-MCL
   tags: [continual-learning, bayesian, meta-learning]
   description: #"We introduce a general meta-continual learning framework that combines neural networks' strong representational power with simple statistical models' robustness to forgetting, where continual learning occurs only in statistical models via sequential Bayesian updates while neural networks remain fixed and protected from catastrophic forgetting. This domain-agnostic and model-agnostic approach achieves significantly improved performance and excellent scalability by meta-learning neural networks to bridge raw data and statistical models that are completely immune to forgetting. Our framework can be applied to a wide range of problems and easily integrated with existing architectures, demonstrating superior performance across diverse continual learning scenarios."
-
