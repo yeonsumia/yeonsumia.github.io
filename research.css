@@ -363,6 +363,13 @@
   aspect-ratio: 1592 / 580;
 }
 
+@media (min-width: 769px) {
+  .card-left.card-left--video {
+    width: 340px;
+    flex: 0 0 340px;
+  }
+}
+
 .card-thumbnail video.main-video {
   position: absolute;
   width: 100%;
@@ -390,7 +397,7 @@
 /* Tags placed below the thumbnail on the left */
 .card-tags--left {
   padding: 0 0.25rem;
-  margin-top: 0;
+  margin-top: 0.5rem;
 }
 
 /* Optional short description under links on the right */
