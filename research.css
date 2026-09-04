@@ -360,7 +360,7 @@
 }
 
 .card-left.card-left--video .card-thumbnail {
-  aspect-ratio: 1592 / 580;
+  aspect-ratio: 1224 / 552;
 }
 
 .card-left--top-spaced .card-thumbnail {
@@ -382,7 +382,6 @@
   object-position: center;
   max-width: 100%;
   max-height: 100%;
-  transform: scale(1.12);
 }
 
 /* Make thumbnail fill the left column; keep wide aspect ratio */
