@@ -368,13 +368,6 @@
   margin-top: 0.75rem;
 }
 
-@media (min-width: 769px) {
-  .card-left.card-left--video {
-    width: 340px;
-    flex: 0 0 340px;
-  }
-}
-
 .card-thumbnail video.main-video {
   position: absolute;
   width: 100%;
