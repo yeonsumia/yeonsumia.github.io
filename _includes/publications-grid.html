@@ -93,6 +93,10 @@
                       <a class="icon-btn icon-btn--github" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="Code Repository">
                         <i class="fab fa-github"></i>
                       </a>
+                    {% elsif key == 'x' %}
+                      <a class="icon-btn icon-btn--x" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="X Post" aria-label="X post about {{ pub.title }}">
+                        <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                      </a>
                     {% elsif key == 'news' %}
                       <a class="icon-btn icon-btn--news" href="{{ url }}" target="_blank" rel="noopener noreferrer" title="News Article">
                         <i class="fas fa-newspaper"></i>

@@ -507,6 +507,9 @@
 .icon-btn--github        { color: #24292e; }
 .icon-btn--github:hover  { background: #24292e; box-shadow: 0 2px 4px rgba(36,41,46,0.3); }
 
+.icon-btn--x        { color: #24292e; }
+.icon-btn--x:hover  { background: #24292e; box-shadow: 0 2px 4px rgba(36,41,46,0.3); }
+
 .icon-btn--project        { color: #007bff; }
 .icon-btn--project:hover  { background: #007bff; box-shadow: 0 2px 4px rgba(0,123,255,0.3); }
 
@@ -520,6 +523,7 @@
 [data-theme="dark"] .icon-btn          { background: #2d3748; }
 [data-theme="dark"] .icon-btn--arxiv   { color: #fc8181; }
 [data-theme="dark"] .icon-btn--github  { color: #e2e8f0; }
+[data-theme="dark"] .icon-btn--x       { color: #e2e8f0; }
 [data-theme="dark"] .icon-btn--project { color: #63b3ed; }
 [data-theme="dark"] .icon-btn--news    { color: #f6ad55; }
 [data-theme="dark"] .icon-btn--link    { color: #a0aec0; }
