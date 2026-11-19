@@ -11,7 +11,7 @@ I explore the world through the lens of reinforcement learning.
 I enjoy finding problems to solve.  
 My research goal is to build a foundation action model that can learn from interactions.  
 
-<p><em>I’m preparing to apply for Ph.D. programs in <span style="color: #e74c3c;"><strong>Fall 2027</strong></span>.</em></p>
+<p><em>I’m applying for Ph.D. programs in <span style="color: #e74c3c;"><strong>Fall 2027</strong></span>.</em></p>
 
 ## News
 <div class="news-item"><span class="date-badge">2026.09</span> <span class="news-text">Released <strong><a href="https://yeonsumia.github.io/dcrl/">DCRL</a></strong>, a paper on goal-conditioned RL.</span></div>
