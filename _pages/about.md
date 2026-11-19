@@ -7,10 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-Greetings! I received my bachelor’s degree in Computer Science and Engineering from Seoul National University.
-I explore the world through the lens of artificial intelligence.
-I value both problem framing and problem solving.
-With strong computational power and human creativity, I believe we can push the boundaries of our knowledge.
+I explore the world through the lens of reinforcement learning.  
+I enjoy finding problems to solve.  
+My research goal is to build a foundation action model that can learn from interactions.  
 
 <p><em>I’m preparing to apply for Ph.D. programs in <span style="color: #e74c3c;"><strong>Fall 2027</strong></span>.</em></p>
 
